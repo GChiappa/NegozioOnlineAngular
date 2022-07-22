@@ -1,1 +1,28 @@
-<p>lista-articoli works!</p>
+<div class="row">
+    <table class="table table-hover">
+
+        <thead style="text-align: center;">
+            <tr>
+                <th>Marca</th>
+                <th>Modello</th>
+                <th>Prezzo</th>
+                <th>Aggiungi</th>
+                <th>Rimuovi</th>
+            </tr>
+        </thead>
+
+        <tbody style="text-align: center;">
+            <tr *ngFor="let articolo of articoli">
+                <td>{{articolo.marca}}</td>
+                <td>{{articolo.modello}}</td>
+                <td>{{articolo.prezzo | currency:'EUR'}}</td>
+                <td><button class="btn btn-outline-primary" style="width: 80%;" (click)="addToCart(articolo)">
+                        <span class="fa fa-add"></span> Aggiungi</button></td>
+                <td><button class="btn btn-outline-warning" style="width: 80%;" (click)="removeToCart(articolo)">
+                        <span class="fa fa-trash"></span> Rimuovi</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

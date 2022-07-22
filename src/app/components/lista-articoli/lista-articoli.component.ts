@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Articolo } from 'src/app/models/articolo';
+import { ClienteServiceService } from 'src/app/services/cliente-service.service';
 
 @Component({
   selector: 'app-lista-articoli',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaArticoliComponent implements OnInit {
 
-  constructor() { }
+  articoli!: Articolo[];
+
+  constructor(private _clienteService: ClienteServiceService) { }
 
   ngOnInit(): void {
+    this._clienteService.getArticoli().subscribe({
+      next: (articoli) => (this.articoli = articoli),
+      error: (e) => (console.error(e))
+    }
+    );
+  }
+
+
+  addToCart(articolo: Articolo): void {
+
+  }
+
+  removeToCart(articolo: Articolo): void {
+
   }
 
 }

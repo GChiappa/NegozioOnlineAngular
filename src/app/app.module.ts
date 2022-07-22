@@ -15,6 +15,8 @@ import { OrdineComponent } from './components/ordine/ordine.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ClienteServiceService } from './services/cliente-service.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -51,9 +53,10 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, ClienteServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

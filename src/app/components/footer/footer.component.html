@@ -1,1 +1,31 @@
-<p>footer works!</p>
+<nav>
+    <h3>Site Map</h3>
+    <ul>
+        <li><a [routerLink]="['/home']">
+                <span class="fa fa-home"></span>&nbsp;&nbsp;Home Page</a></li>
+        <li><a [routerLink]="['/carrello']">
+                <span class="fas fa-edit"></span>&nbsp;&nbsp;Carrello</a></li>
+        <li><a [routerLink]="['/articoli']">
+                <span class="fa fa-list"></span>&nbsp;&nbsp;Articoli</a></li>
+    </ul>
+</nav>
+
+<nav>
+    <h3>Contatti</h3>
+    <ul>
+        <li><a [routerLink]="['/#']">Info</a></li>
+        <li><a [routerLink]="['/#']">Aiuto</a></li>
+        <li><a [routerLink]="['/#']">Elenco contatti</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h3>Social Media</h3>
+    <ul>
+        <li><a [routerLink]="['/#']">Facebook</a></li>
+        <li><a [routerLink]="['/#']">Instagram</a></li>
+        <li><a [routerLink]="['/#']">Twitter</a></li>
+    </ul>
+</section>
+
+<p class="copyright">Gestione Impiegati<sup>&copy;</sup></p>
